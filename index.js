@@ -27,7 +27,11 @@ app.use(cors(corsOptions));
 app.use(fileUpload());
 app.use("/uploads" , express.static(__dirname + "/uploads"));
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
+
+app.get("/" , (req , res) => {
+   res.send("Congrets , Your Nodejs server is deployd successfully");
+})
 
 app.use('/api/users/' , userRouter);
 app.use('/api/posts/' , postRouter);
