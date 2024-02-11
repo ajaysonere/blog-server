@@ -22,6 +22,8 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
+      - name: Give the permission to docker hub
+        run:  sudo chmod 666 /var/run/docker.sock
       - name: Pull image from docker hub
         run: docker pull ajaysonere/blog-server
       - name: Run the docker image
